@@ -1,3 +1,7 @@
+:root {
+  --landing-color: #1c1c1c;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
 
 * {
@@ -12,7 +16,7 @@ html {
 }
 
 .landing {
-  background-color: #292929;
+  background-color: var(--landing-color);
 }
 
 .row {
@@ -48,7 +52,7 @@ html {
 a,
 .navbar__link {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 i {
@@ -60,14 +64,47 @@ i {
 }
 
 .navbar__link--wrapper {
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 15px;
+	background: transparent;
+	display: inline-block;
+	text-decoration: none;
+  padding: 5px 10px;
+	border: 3px solid white;
+	position: relative;
+	letter-spacing: 1px;
+	outline: none;
 }
 
-.navbar__link--wrapper--black {
-  padding: 5px;
-  background-color: #000;
-  border: solid 2px #fff;
-  border-radius: 15px;
+.navbar__link--wrapper::before {
+  content: '';
+	width: 20px;
+	height: 20px;
+	background: var(--landing-color);
+	border: 3px solid white;
+	transform: rotate(45deg);
+	position: absolute;
+	border-top: 0;
+	border-left: 0;
+	border-bottom: 0;
+	top: -12px;
+	left: -13px;
+}
+
+.navbar__link--wrapper::after {
+  content: '';
+	width: 20px;
+	height: 20px;
+	background: var(--landing-color);
+	border: 3px solid white;
+	transform: rotate(-132deg);
+	position: absolute;
+	border-top: 0;
+	border-left: 0;
+	border-bottom: 0;
+	top: auto;
+	right: -13px;
+	bottom: -12px;
+}
+
+.navbar__link--wrapper:hover {
+  border: 3px solid linear-gradient(#e66465, #9198e5);
 }
